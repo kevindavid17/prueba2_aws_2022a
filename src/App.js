@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import Adder from './component/Adder';
+import Users from './component/Users';
+import UserDetail from './component/UserDetail';
 
 function App() {
+
+  const [userList, setUserList] = useState ([]);
+  const addUser = (newUser) => {
+    setUserList([...userList, newUser]);
+  //AWM2022A
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Adder addUser={addUser}/>
+      </div>
+      <div>
+        <Users githubUsers = {['ArnoldIza', 'kevindavid17', 'jouxjr7', 'AngelXS', 'JorgePerezEC', 'aleste-dx']}/>
+      </div>
+      <div>
+        <UserDetail/>
+      </div>
     </div>
   );
 }
