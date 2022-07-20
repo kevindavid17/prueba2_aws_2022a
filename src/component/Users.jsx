@@ -1,10 +1,20 @@
 import React from "react";
 
-export default function Users (){
+const Users = ({githubUsers}) => 
+    githubUsers.map((usuario,index) =>{
+ 
+        console.log(usuario, index);
     return (
-    <div className="container">
+        todoLst.map((item, i) => 
+        <p key={i}>
+            <span className='Task'>{item.task}</span>
+        </p>   
+    )
         
-    </div>   
-
-    );   
-}
+        <p key={index}>
+              {usuario}
+        </p>
+    ); 
+    }
+)
+export default Users;
