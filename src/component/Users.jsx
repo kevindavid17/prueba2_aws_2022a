@@ -5,15 +5,10 @@ const Users = ({githubUsers}) =>
  
         console.log(usuario, index);
     return (
-        todoLst.map((item, i) => 
-        <p key={i}>
-            <span className='Task'>{item.task}</span>
-        </p>   
-    )
-        
         <p key={index}>
-              {usuario}
-        </p>
+            {usuario}
+        </p>   
+
     ); 
     }
 )
